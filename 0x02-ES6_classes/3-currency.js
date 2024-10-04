@@ -1,14 +1,14 @@
 export default class Currency{
     constructor(code, name){
-        this.code = code;
-        this.name = name;
+        this._code = code;
+        this._name = name;
     }
 
     get code (){
-        return this._code = code;
+        return this._code;
     }
     get name (){
-        return this._name = this.name;
+        return this._name;
     }
 
     set code(value){
