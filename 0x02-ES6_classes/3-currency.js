@@ -8,7 +8,7 @@ export default class Currency{
         this._code = code;
     }
     get name (){
-        this._name = name;
+        this._name = this.name;
     }
 
     set code(value){
