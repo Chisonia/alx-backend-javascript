@@ -1,8 +1,4 @@
 export default function createIteratorObject(report) {
-  let employees = [];
-
-  for (const departmentName in report.allEmployees) {
-    employees = employees.concat(report.allEmployees[departmentName]);
-  }
+  const employees = Object.values(report.allEmployees).flat();
   return employees[Symbol.iterator]();
 }
