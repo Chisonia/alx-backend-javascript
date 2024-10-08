@@ -1,5 +1,3 @@
-// 10-car.js
-// Define a symbol
 const _brand = Symbol('brand');
 const _motor = Symbol('motor');
 const _color = Symbol('color');
