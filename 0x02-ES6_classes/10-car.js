@@ -1,6 +1,7 @@
-const _brand = Symbol('brand'); // Define a symbol for brand
-const _motor = Symbol('motor'); // Define a symbol for motor
-const _color = Symbol('color'); // Define a symbol for color
+// 10-car.js
+const _brand = Symbol('brand');  // Define a symbol for brand
+const _motor = Symbol('motor');  // Define a symbol for motor
+const _color = Symbol('color');  // Define a symbol for color
 
 export default class Car {
   constructor(brand, motor, color) {
@@ -10,6 +11,6 @@ export default class Car {
   }
 
   cloneCar() {
-    return new this.constructor(); // Return a new instance of the class
+    return new this.constructor(); // Return a new instance of the same class
   }
 }
