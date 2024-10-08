@@ -1,12 +1,10 @@
 export default class Car {
   constructor(brand, motor, color) {
-    this._brand = brand;
+    this._brand = brand; // Store as regular properties with an underscore prefix
     this._motor = motor;
     this._color = color;
   }
-
   cloneCar() {
-    return new this.constructor(this._brand, this._motor, this._color);
+    return new this.constructor();
   }
-
 }
