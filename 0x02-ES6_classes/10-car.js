@@ -3,7 +3,7 @@ const _motor = Symbol('motor'); // Define a symbol for motor
 const _color = Symbol('color'); // Define a symbol for color
 
 export default class Car {
-    constructor(brand, motor, color) {
+  constructor(brand, motor, color) {
     this[_brand] = brand; // Store brand using symbol
     this[_motor] = motor; // Store motor using symbol
     this[_color] = color; // Store color using symbol
