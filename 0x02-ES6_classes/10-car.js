@@ -13,3 +13,4 @@ export default class Car {
     return new this.constructor(); // Return a new instance of the class
   }
 }
+
