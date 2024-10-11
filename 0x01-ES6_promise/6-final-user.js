@@ -1,21 +1,16 @@
 import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
-export default async function handleProfileSignup(firstName, lastName, filename) {
-  // Wait for all promises to settle
-  const details = await Promise.allSettled([
+export default async function handleProfileSignup(firstName, lastName, fileName) {
+  // Execute the promises
+  const results = await Promise.allSettled([
     signUpUser(firstName, lastName),
-    uploadPhoto(filename),
+    uploadPhoto(fileName),
   ]);
 
-  const result = [];
-  details.forEach((item) => {
-    if (item.status === 'fulfilled') {
-      result.push({ status: item.status, value: item.value });
-    } else {
-      result.push({ status: item.status, value: `${item.reason}` });
-    }
-  });
-
-  return result;
+  // Format the result to match the required structure
+  return results.map((result) => ({
+    status: result.status,
+    value: result.status === 'fulfilled' ? result.value : result.reason,
+  }));
 }
