@@ -1,8 +1,9 @@
-export default function cleanSet(set, startString) {
-  if (!startString || typeof startString !== 'string') {
+export default function cleanSet(set, string) {
+  if (string === undefined || string.length === 0) {
     return '';
   }
-  const filteredString = [...set].filter((string) => string.startsWith(startString))
-    .map((string) => string.slice(startString.length));
-  return filteredString.join('-');
+  return [...set]
+    .filter((str) => (str !== undefined ? str.startsWith(string) : ''))
+    .map((str) => (str !== undefined ? str.slice(string.length) : ''))
+    .join('-');
 }
